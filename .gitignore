@@ -1,0 +1,24 @@
+# Rider IDE files
+.idea/
+
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio temporary files
+*.vs/
+
+# npm / frontend libraries (optional if using lib folder)
+wwwroot/lib/
+
+# Local appsettings (contains secrets like Stripe keys)
+appsettings.Development.json
+
+# Logs
+*.log

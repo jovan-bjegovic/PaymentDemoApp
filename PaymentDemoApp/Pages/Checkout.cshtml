@@ -1,0 +1,11 @@
+﻿@page
+@model CheckoutModel
+@{
+    ViewData["Title"] = "Stripe Checkout";
+}
+
+<h2>Stripe Checkout</h2>
+
+<p>Kliknite dugme ispod za plaćanje:</p>
+
+<a class="btn btn-primary" href="@Model.CheckoutUrl">Pay with Stripe</a>
