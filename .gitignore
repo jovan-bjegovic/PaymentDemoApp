@@ -15,7 +15,7 @@ obj/
 *.vs/
 
 # npm / frontend libraries (optional if using lib folder)
-wwwroot/lib/
+PaymentDemoApp/wwwroot/lib/
 
 # Local appsettings (contains secrets like Stripe keys)
 appsettings.Development.json
