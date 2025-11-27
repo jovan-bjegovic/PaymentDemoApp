@@ -27,7 +27,7 @@ public class CheckoutModel(IConfiguration config) : PageModel
                         {
                             Name = "Test Product"
                         },
-                        UnitAmount = 1000 // $10.00
+                        UnitAmount = 1000
                     },
                     Quantity = 1
                 }

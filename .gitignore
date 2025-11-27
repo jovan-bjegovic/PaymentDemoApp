@@ -19,6 +19,7 @@ wwwroot/lib/
 
 # Local appsettings (contains secrets like Stripe keys)
 appsettings.Development.json
+appsettings.json
 
 # Logs
 *.log
