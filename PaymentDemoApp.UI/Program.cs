@@ -1,7 +1,12 @@
+using PaymentDemoApp.Applicaiton.Interfaces;
+using PaymentDemoApp.Infrastructure.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<IPaymentService, StripePaymentService>();
 
 var app = builder.Build();
 

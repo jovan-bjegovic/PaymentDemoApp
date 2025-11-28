@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentDemoApp", "PaymentDemoApp\PaymentDemoApp.csproj", "{4F8F5524-6533-4F27-87D3-823AF291B6F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentDemoApp.UI", "PaymentDemoApp.UI\PaymentDemoApp.UI.csproj", "{4F8F5524-6533-4F27-87D3-823AF291B6F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentDemoApp.Infrastructure", "PaymentDemoApp.Infrastructure\PaymentDemoApp.Infrastructure.csproj", "{184B9D68-67E6-46A3-BACE-9844A6DF41B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentDemoApp.Application", "PaymentDemoApp.Application\PaymentDemoApp.Application.csproj", "{C7C11AC2-63DE-4C1B-AB63-C623EB476B81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +16,13 @@ Global
 		{4F8F5524-6533-4F27-87D3-823AF291B6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F8F5524-6533-4F27-87D3-823AF291B6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F8F5524-6533-4F27-87D3-823AF291B6F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184B9D68-67E6-46A3-BACE-9844A6DF41B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184B9D68-67E6-46A3-BACE-9844A6DF41B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184B9D68-67E6-46A3-BACE-9844A6DF41B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184B9D68-67E6-46A3-BACE-9844A6DF41B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C11AC2-63DE-4C1B-AB63-C623EB476B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C11AC2-63DE-4C1B-AB63-C623EB476B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C11AC2-63DE-4C1B-AB63-C623EB476B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C11AC2-63DE-4C1B-AB63-C623EB476B81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

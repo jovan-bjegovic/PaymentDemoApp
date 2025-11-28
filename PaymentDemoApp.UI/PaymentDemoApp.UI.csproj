@@ -4,10 +4,16 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>PaymentDemoApp</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Stripe.net" Version="50.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PaymentDemoApp.Application\PaymentDemoApp.Application.csproj" />
+      <ProjectReference Include="..\PaymentDemoApp.Infrastructure\PaymentDemoApp.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
