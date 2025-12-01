@@ -1,6 +1,8 @@
-﻿namespace PaymentDemoApp.Applicaiton.Interfaces;
+﻿using PaymentDemoApp.Applicaiton.Models;
+
+namespace PaymentDemoApp.Applicaiton.Interfaces;
 
 public interface IPaymentService
 {
-    Task<string> CreatePaymentIntentAsync(long amount, string currency);
+    Task<PaymentResponse> CreatePaymentAsync(PaymentRequest request);
 }

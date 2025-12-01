@@ -6,16 +6,40 @@ namespace PaymentDemoApp.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class PaymentsController(IPaymentService paymentService) : ControllerBase
+public class PaymentsController(IPaymentService paymentService, ITokenService tokenService) : ControllerBase
 {
-    [HttpPost("create-payment-intent")]
-    public async Task<IActionResult> CreatePaymentIntent([FromBody] PaymentRequest request)
+    [HttpPost("create-token")]
+    public async Task<IActionResult> CreateToken()
     {
-        string clientSecret = await paymentService.CreatePaymentIntentAsync(
-            request.Amount,
-            request.Currency
-        );
-        
-        return Ok(new { clientSecret });
+        try
+        {
+            var url = await tokenService.CreateHostedTokenizationAsync();
+            
+            return Ok(new { token = url });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
     }
+
+    [HttpPost("create-payment")]
+    public async Task<IActionResult> CreatePayment([FromBody] PaymentRequest request)
+    {
+        try
+        {
+            var response = await paymentService.CreatePaymentAsync(request);
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            
+            return BadRequest(response);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new PaymentResponse { Success = false, ErrorMessage = ex.Message });
+        }
+    }
+
 }

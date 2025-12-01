@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<IPaymentService, StripePaymentService>();
+builder.Services.AddScoped<IPaymentService, WorldlinePaymentService>();
+builder.Services.AddScoped<ITokenService, WorldlinePaymentService>();
 
 var app = builder.Build();
 

@@ -1,7 +1,9 @@
 ﻿namespace PaymentDemoApp.Applicaiton.Models;
 
-public class PaymentResult
+public class PaymentResponse
 {
     public bool Success { get; set; }
-    public string? Message { get; set; }
+    public string? PaymentId { get; set; } 
+    public string? ErrorMessage { get; set; }
+    public string? ClientSecret { get; set; }
 }
