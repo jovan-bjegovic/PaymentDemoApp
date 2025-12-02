@@ -1,0 +1,39 @@
+﻿@page "/wordline-payment"
+@model PaymentDemoApp.Pages.WordlinePaymentModel
+
+<h2>Payment</h2>
+
+<form id="payment-form">
+    <label for="name">Name</label>
+    <input id="name" type="text" required />
+
+    <label for="email">Email</label>
+    <input id="email" type="email" required />
+
+    <label for="country">Country</label>
+    <select id="country" required>
+        <option value="RS">Serbia</option>
+        <option value="US">United States</option>
+        <option value="GB">United Kingdom</option>
+        <option value="CA">Canada</option>
+        <option value="AU">Australia</option>
+        <option value="DE">Germany</option>
+        <option value="FR">France</option>
+    </select>
+
+    <label>Currency</label>
+    <input id="currency" type="text" readonly />
+
+    <label>Amount</label>
+    <div id="amount-display">10.00 USD</div>
+
+    <div id="div-hosted-tokenization"></div>
+
+    <button id="submit-token" type="button">Pay</button>
+</form>
+
+@section Scripts {
+    <script src="https://payment.preprod.direct.worldline-solutions.com/hostedtokenization/js/client/tokenizer.min.js"></script>
+    <script src="~/js/worldline-payment.js"></script>
+}
+<link rel="stylesheet" href="~/css/wordline-payment.css" />

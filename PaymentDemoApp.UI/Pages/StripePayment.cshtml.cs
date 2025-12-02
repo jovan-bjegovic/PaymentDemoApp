@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Configuration;
 
 namespace PaymentDemoApp.Pages;
 
-public class CustomPaymentModel(IConfiguration config) : PageModel
+public class StripePaymentModel(IConfiguration config) : PageModel
 {
     public required string PublishableKey { get; set; }
 

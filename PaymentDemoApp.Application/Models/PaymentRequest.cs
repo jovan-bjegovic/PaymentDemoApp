@@ -2,6 +2,12 @@
 
 public class PaymentRequest
 {
-    public long Amount { get; set; }
-    public string Currency { get; set; } = "usd";
+    public required long Amount { get; set; }
+    public required string Currency { get; set; }
+
+    public required string Name { get; set; }
+    public required string Email { get; set; }
+    public required string Country { get; set; }
+    public string? Token { get; set; }
 }
+
