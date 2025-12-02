@@ -29,8 +29,9 @@ public class WorldlinePaymentService : IPaymentService, ITokenService
                         ?? throw new ArgumentNullException("Worldline:ApiUrl", "Worldline ApiUrl is missing in configuration.");
 
         if (!Uri.TryCreate(apiUrl, UriKind.Absolute, out var apiEndpoint))
+        {
             throw new ArgumentException("Worldline ApiUrl is invalid or malformed.", "Worldline:ApiUrl");
-
+        }
 
         client = Factory.CreateClient(new CommunicatorConfiguration
         {
