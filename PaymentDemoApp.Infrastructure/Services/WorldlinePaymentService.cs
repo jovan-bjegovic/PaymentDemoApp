@@ -16,10 +16,21 @@ public class WorldlinePaymentService : IPaymentService, ITokenService
 
     public WorldlinePaymentService(IConfiguration config)
     {
-        string apiKey = config["Worldline:ApiKey"];
-        string apiSecret = config["Worldline:ApiSecret"];
-        merchantId = config["Worldline:MerchantId"];
-        Uri apiEndpoint = new Uri(config["Worldline:ApiUrl"]);
+        string apiKey = config["Worldline:ApiKey"]
+                        ?? throw new ArgumentNullException("Worldline:ApiKey", "Worldline API key is missing in configuration.");
+
+        string apiSecret = config["Worldline:ApiSecret"]
+                           ?? throw new ArgumentNullException("Worldline:ApiSecret", "Worldline API secret is missing in configuration.");
+
+        merchantId = config["Worldline:MerchantId"]
+                     ?? throw new ArgumentNullException("Worldline:MerchantId", "Worldline MerchantId is missing in configuration.");
+
+        string apiUrl = config["Worldline:ApiUrl"]
+                        ?? throw new ArgumentNullException("Worldline:ApiUrl", "Worldline ApiUrl is missing in configuration.");
+
+        if (!Uri.TryCreate(apiUrl, UriKind.Absolute, out var apiEndpoint))
+            throw new ArgumentException("Worldline ApiUrl is invalid or malformed.", "Worldline:ApiUrl");
+
 
         client = Factory.CreateClient(new CommunicatorConfiguration
         {
@@ -34,10 +45,7 @@ public class WorldlinePaymentService : IPaymentService, ITokenService
     
     public async Task<string> CreateHostedTokenizationAsync()
     {
-        CreateHostedTokenizationRequest request = new CreateHostedTokenizationRequest
-        {
-            Variant = "Default.html"
-        };
+        CreateHostedTokenizationRequest request = new CreateHostedTokenizationRequest();
 
         var response = await client
             .WithNewMerchant(merchantId)

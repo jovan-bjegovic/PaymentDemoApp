@@ -13,7 +13,7 @@ public class PaymentsController(IPaymentService paymentService, ITokenService to
     {
         try
         {
-            var url = await tokenService.CreateHostedTokenizationAsync();
+            string url = await tokenService.CreateHostedTokenizationAsync();
             
             return Ok(new { token = url });
         }
@@ -28,7 +28,7 @@ public class PaymentsController(IPaymentService paymentService, ITokenService to
     {
         try
         {
-            var response = await paymentService.CreatePaymentAsync(request);
+            PaymentResponse response = await paymentService.CreatePaymentAsync(request);
             if (response.Success)
             {
                 return Ok(response);
